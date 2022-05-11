@@ -27,5 +27,19 @@ Encoding JSON
 ```
 # After running go run main.go
 # you need to curl the encode listener
-curl loclhost:8080/encode
+curl localhost:8080/encode
+```
+
+## v0.6.0
+Decode JSON
+```
+# Enter the following curl command to
+# a seperate terminal after runing 
+# go run main.go
+# See the log output in the first terminal used
+# to run main.go
+#
+# You can use https://curlbuilder.com/ to build 
+# custom curl commands
+curl -XGET -H "Content-type: application/json" -d '{"First":"Jonny"}' 'localhost:8080/decode'
 ```
