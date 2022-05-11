@@ -18,3 +18,6 @@ JSON Marshal example
 
 ## v0.3.0
 JSON Unmarshal example
+
+## v0.4.0
+Setup server for encodeing and decoding JSON
