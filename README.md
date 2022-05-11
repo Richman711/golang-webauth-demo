@@ -21,3 +21,11 @@ JSON Unmarshal example
 
 ## v0.4.0
 Setup server for encodeing and decoding JSON
+
+## v0.5.0
+Encoding JSON
+```
+# After running go run main.go
+# you need to curl the encode listener
+curl loclhost:8080/encode
+```

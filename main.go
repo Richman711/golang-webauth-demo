@@ -2,8 +2,8 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
+	"net/http"
 )
 
 type person struct {
@@ -38,15 +38,22 @@ func main() {
 
 	// fmt.Println("Back into a Go data structure", xp2)
 
-	http.Handlefunc("/encode", encodeJSON)
-	http.Handlefunc("/decode", decodeJSON)
-	http.ListenAndServer(":8080", nil)
+	http.HandleFunc("/encode", encodeJSON)
+	http.HandleFunc("/decode", decodeJSON)
+	http.ListenAndServe(":8080", nil)
 }
 
 func encodeJSON(w http.ResponseWriter, r *http.Request) {
+	p1 := person {
+	 	First: "Jenny",
+	}
 
+	err := json.NewEncoder(w).Encode(p1)
+	if err != nil {
+		log.Println("Encoded bad data", err)
+	}
 }
 
-func decodeJSON(w https.ResponseWriter, r *http.Request) {
+func decodeJSON(w http.ResponseWriter, r *http.Request) {
 
 }
