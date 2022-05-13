@@ -53,8 +53,7 @@ HTTP Basic Authentication
 Storing passwords
  * Always Always hash the password using a secure hashing algorithm. Never store raw passwords in an unhashed form.
   * bcrypt - Password hashing algorithm
-    * Salting is achieved by 
+    * Salting is achieved by hashing the unsalted password and using that as the salt
     * https://pkg.go.dev/golang.org/x/crypto/bcrypt
   * scrypt - Password hashing
-    * Includes a builtin salting method
     * https://pkg.go.dev/golang.org/x/crypto@v0.0.0-20220511200225-c6db032c6c88/scrypt
