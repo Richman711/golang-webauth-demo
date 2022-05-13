@@ -43,3 +43,18 @@ Decode JSON
 # custom curl commands
 curl -XGET -H "Content-type: application/json" -d '{"First":"Jonny"}' 'localhost:8080/decode'
 ```
+
+## v0.7.0
+HTTP Basic Authentication
+  * Send username & password with every request
+  * https://pkg.go.dev/net/http#Request.BasicAuth
+
+## v0.8.0
+Storing passwords
+ * Always Always hash the password using a secure hashing algorithm. Never store raw passwords in an unhashed form.
+  * bcrypt - Password hashing algorithm
+    * Salting is achieved by 
+    * https://pkg.go.dev/golang.org/x/crypto/bcrypt
+  * scrypt - Password hashing
+    * Includes a builtin salting method
+    * https://pkg.go.dev/golang.org/x/crypto@v0.0.0-20220511200225-c6db032c6c88/scrypt
